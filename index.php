@@ -40,6 +40,7 @@
         
         <?php endforeach;?>
     </table>
-    
+
+    <a href="add.php">&larr; Add a new movie</a>
 </body>
 </html>
