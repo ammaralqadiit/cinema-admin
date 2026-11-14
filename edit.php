@@ -92,7 +92,7 @@
         }
         catch(PDOException $e){
             //handle database errors
-            $errors[]="Something went wrong while adding the movie.";
+            $errors[]="Something went wrong while updating the movie.";
         }
     }
 
@@ -104,7 +104,8 @@
             'duration_min'=>$duration_min,
             'genre'=>$genre,
             'language'=>$language,
-            'release_year'=>$release_year
+            'release_year'=>$release_year,
+            'id'=>$id
         ];
     }
 ?>
@@ -172,6 +173,8 @@
             <label for="release_year">Release Year:</label>
             <input type="number" name="release_year" id="release_year" value="<?= htmlspecialchars($movie['release_year']) ?>" required/>
         </div>
+
+        <input type="hidden" name="id" value="<?= htmlspecialchars($movie['id']) ?>">
 
         <button type="submit">Update</button>
         

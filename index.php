@@ -26,7 +26,8 @@
             <th>Genre</th>
             <th>Language</th>
             <th>Year</th>
-            <th>Actions</th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
         <?php foreach($movies as $movie):?>
 
@@ -37,7 +38,17 @@
             <td><?= htmlspecialchars($movie['genre']) ?></td>
             <td><?= htmlspecialchars($movie['language']) ?></td>
             <td><?= $movie['release_year'] ?></td>
-            <td><a href="edit.php?id=<?= $movie['id']?>">Edit</a></td>
+            <td>
+                <a href="edit.php?id=<?= $movie['id'] ?>">Edit</a>
+            </td>
+            <td>
+                <form action="delete.php" method="POST">
+                    <input type="hidden" name="id" value="<?= $movie['id'] ?>">
+                    <button type="submit" onclick="return confirm('Are you sure you want to delete this movie?')">
+                        Delete
+                    </button>
+                </form>
+            </td>
         </tr>
         
         <?php endforeach;?>
