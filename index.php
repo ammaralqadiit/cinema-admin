@@ -26,6 +26,7 @@
             <th>Genre</th>
             <th>Language</th>
             <th>Year</th>
+            <th>Actions</th>
         </tr>
         <?php foreach($movies as $movie):?>
 
@@ -36,6 +37,7 @@
             <td><?= htmlspecialchars($movie['genre']) ?></td>
             <td><?= htmlspecialchars($movie['language']) ?></td>
             <td><?= $movie['release_year'] ?></td>
+            <td><a href="edit.php?id=<?= $movie['id']?>">Edit</a></td>
         </tr>
         
         <?php endforeach;?>
